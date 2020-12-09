@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CommonCrypto
 import Combine
 
 class ViewController: UIViewController {
@@ -14,47 +13,30 @@ class ViewController: UIViewController {
     let provider = MarvelProvider()
     private var cancellables: Set<AnyCancellable> = []
 
-    var hostView: HostView<CarachterArtworkView>?
+    typealias CharactersList = GenericContainerDiffableCollectionView<CharactersResponseContent, CharacterDataContainer, CharacterListCell>
+    
+    fileprivate lazy var characterList: CharactersList = {
+        // layout
+        var config = UICollectionLayoutListConfiguration(appearance:
+          .insetGrouped)
+        config.backgroundColor = .clear
+        let layout =
+          UICollectionViewCompositionalLayout.list(using: config)
+        let moviesList = CharactersList(layout: layout, parent: self)
+        return moviesList
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        provider.$characters.sink { [unowned self] characters in
-            
-            guard !characters.isEmpty else { return }
-            let artworkSwiftUIVIew = CarachterArtworkView(artworkViewModel: characters.first!.artwork!, variant: .detail)
-            hostView = HostView(parent: self, view: artworkSwiftUIVIew)
-            view.addSubview(hostView!)
-            hostView?.fill()
-        }.store(in: &cancellables)
-      
+        view.addSubview(characterList)
+        characterList.fillSuperview()
+        bindViewModel()
     }
-}
-
-
-extension String {
-    func md5() -> String {
-        let data = Data(utf8)
-        var hash = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
-
-        data.withUnsafeBytes { buffer in
-            _ = CC_MD5(buffer.baseAddress, CC_LONG(buffer.count), &hash)
-        }
-
-        return hash.map { String(format: "%02hhx", $0) }.joined()
-    }
-}
-
-extension UIView {
     
-    func fill() {
-        translatesAutoresizingMaskIntoConstraints = false
-        guard let superView = superview else { fatalError() }
-        NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor),
-            topAnchor.constraint(equalTo: superView.topAnchor),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor),
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor)
-        ])
+    private func bindViewModel() {
+        provider.$characterDataWrapper.sink { [unowned self] characterResult in
+            guard let dataContainer = characterResult?.data else { return }
+            characterList.applySnapshotWith([dataContainer])
+        }.store(in: &cancellables)
     }
 }

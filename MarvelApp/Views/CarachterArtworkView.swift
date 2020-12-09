@@ -10,11 +10,11 @@ import SDWebImageSwiftUI
 
 struct CarachterArtworkView: View {
     
-    var artworkViewModel: ArtworkViewModel
+    var artworkViewModel: ArtworkViewModel?
     var variant: ImageVariants
     
     var body: some View {
-        let url = artworkViewModel.imageVariant(variant)
+        let url = artworkViewModel?.imageVariant(variant) ?? ""
         WebImage(url: URL(string: url))
            // Supports options and context, like `.delayPlaceholder` to show placeholder only when error
            .onSuccess { image, data, cacheType in

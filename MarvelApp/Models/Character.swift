@@ -340,14 +340,6 @@ struct CharacterDataWrapper: Decodable {
     let data: CharacterDataContainer
 }
 
-struct CharacterDataContainer: Decodable {
-    
-    let offset: Int?
-    let limit: Int?
-    let total: Int?
-    let count: Int?
-    let results: [Character]?
-}
 
 struct Character: Decodable {
     
@@ -360,7 +352,38 @@ struct Character: Decodable {
     let thumbnail: Artwork?
 }
 
+extension Character: Hashable {
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 struct URLKind: Decodable {
     let type: String?
     let url: String?
+}
+
+
+/// Diffable model construction
+struct CharacterDataContainer: Decodable {
+    
+    let offset: Int?
+    let limit: Int?
+    let total: Int?
+    let count: Int?
+    let results: [Character]?
+}
+
+extension CharacterDataContainer: DiffableSection {
+
+    var viewModels: [CharacterViewModel] {
+        results?.map { CharacterViewModel(model: $0) } ?? []
+    }
+}
+
+struct CharactersResponseContent: DiffableContent {
+    var sections: [CharacterDataContainer]
 }

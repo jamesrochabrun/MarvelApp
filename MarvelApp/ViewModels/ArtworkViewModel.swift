@@ -23,10 +23,10 @@ struct ArtworkViewModel {
     }
     
     func imageVariant(_ variant: ImageVariants) -> String {
-        let t = "\(path)/\(variant.rawValue)/.\(extensionType)"
-        print("zizou \(t)")
-       // return t
-        return "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/\(variant.rawValue).\(extensionType)"
+        return "\(path)/\(variant.rawValue)/.\(extensionType)"
+//        print("zizou \(t)")
+//       // return t
+//        return "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/\(variant.rawValue).\(extensionType)"
     }
 }
 

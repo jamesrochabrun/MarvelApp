@@ -20,7 +20,7 @@ extension MarvelFeed: Endpoint {
         case .characters:
             let tsQueryitem = URLQueryItem(name: "ts", value: formattedTimeStamp)
             let apiKey = URLQueryItem(name: "apikey", value: Self.publicKey)
-            let hash = "\(formattedTimeStamp)\(Self.privateKey)\(Self.publicKey)".md5()
+            let hash = "\(formattedTimeStamp)\(Self.privateKey)\(Self.publicKey)".md5
             let hashQuery = URLQueryItem(name: "hash", value: hash)
             return [tsQueryitem, apiKey, hashQuery]
         }

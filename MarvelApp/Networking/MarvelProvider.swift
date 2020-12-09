@@ -12,7 +12,7 @@ final class MarvelProvider: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    @Published var characters: [CharacterViewModel] = []
+    @Published private(set) var characterDataWrapper: CharacterDataWrapper?
     
     private let client = MarvelAPI()
     
@@ -22,9 +22,7 @@ final class MarvelProvider: ObservableObject {
                 print("the value is \(vale)")
             },
             receiveValue: {
-                self.characters = $0.data.results?.compactMap { CharacterViewModel(model: $0) } ?? []
-                print("the characters is \(self.characters)")
+                self.characterDataWrapper = $0
             })
-        
     }
 }
