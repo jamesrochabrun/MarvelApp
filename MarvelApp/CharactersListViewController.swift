@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CharactersListViewController.swift
 //  MarvelApp
 //
 //  Created by James Rochabrun on 12/6/20.
@@ -8,17 +8,20 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+/**
+ UIKit implementation
+ */
 
-    let provider = MarvelProvider()
+final class CharactersListViewController: UIViewController {
+
+    private let provider = MarvelProvider()
     private var cancellables: Set<AnyCancellable> = []
 
-    typealias CharactersList = GenericContainerDiffableCollectionView<CharactersResponseContent, CharacterDataContainer, CharacterListCell>
+    private typealias CharactersList = GenericContainerDiffableCollectionView<CharactersResponseContent, CharacterDataContainer, CharacterListCell>
     
-    fileprivate lazy var characterList: CharactersList = {
-        // layout
+    private lazy var characterList: CharactersList = {
         var config = UICollectionLayoutListConfiguration(appearance:
-          .insetGrouped)
+                                                            .plain)
         config.backgroundColor = .clear
         let layout =
           UICollectionViewCompositionalLayout.list(using: config)
@@ -33,6 +36,7 @@ class ViewController: UIViewController {
         bindViewModel()
     }
     
+    /// UIKit w
     private func bindViewModel() {
         provider.$characterDataWrapper.sink { [unowned self] characterResult in
             guard let dataContainer = characterResult?.data else { return }

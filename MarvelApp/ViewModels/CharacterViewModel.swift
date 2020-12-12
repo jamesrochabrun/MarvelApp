@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharacterViewModel {
+struct CharacterViewModel: Identifiable {
 
     let id = UUID()
 

@@ -12,7 +12,7 @@ final class MarvelProvider: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    @Published private(set) var characterDataWrapper: CharacterDataWrapper?
+    @Published var characterDataWrapper: CharacterDataWrapper?
     
     private let client = MarvelAPI()
     

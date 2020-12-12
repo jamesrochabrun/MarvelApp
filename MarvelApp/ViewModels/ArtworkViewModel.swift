@@ -22,15 +22,14 @@ struct ArtworkViewModel {
         self.extensionType = extensionType
     }
     
-    func imageVariant(_ variant: ImageVariants) -> String {
-        return "\(path)/\(variant.rawValue)/.\(extensionType)"
-//        print("zizou \(t)")
-//       // return t
-//        return "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/\(variant.rawValue).\(extensionType)"
+    func imagePathFor(variant: ImageVariant) -> String {
+        let uri = "\(path)/\(variant.rawValue).\(extensionType)"
+        print(uri)
+        return uri
     }
 }
 
-enum ImageVariants: String {
+enum ImageVariant: String {
     
     // Portrait
     case portraitSmall = "portrait_small"

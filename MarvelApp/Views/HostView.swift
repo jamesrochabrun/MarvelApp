@@ -8,6 +8,10 @@
 import UIKit
 import SwiftUI
 
+/**
+  Generic class
+ */
+
 final class HostView<V: View>: UIView {
     
     private weak var controller: UIHostingController<V>?
@@ -31,14 +35,8 @@ final class HostView<V: View>: UIView {
             let hostingController = UIHostingController(rootView: view)
             controller = hostingController
             parent.addChild(hostingController)
-            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
             addSubview(hostingController.view)
-            NSLayoutConstraint.activate([
-                hostingController.view.leadingAnchor.constraint(equalTo: leadingAnchor),
-                hostingController.view.topAnchor.constraint(equalTo: topAnchor),
-                hostingController.view.trailingAnchor.constraint(equalTo: trailingAnchor),
-                hostingController.view.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+            hostingController.view.fillSuperview()
             hostingController.didMove(toParent: parent)
         }
     }

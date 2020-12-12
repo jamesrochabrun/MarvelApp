@@ -10,12 +10,11 @@ import SwiftUI
 
 final class CharacterListCell: BaseCollectionViewCell<CharacterViewModel> {
     
-    var hostView: HostView<CharacterHorizontalView>?
+    private var hostView: HostView<CharacterListView>?
     
     override func setupWith(_ viewModel: CharacterViewModel, parent: UIViewController?) {
-        
         guard let parent = parent else { fatalError() }
-        let characterListView = CharacterHorizontalView(characterViewModel: viewModel)
+        let characterListView = CharacterListView(characterViewModel: viewModel, imagesVariant: .squareStandardLarge)
         let hostView = HostView(parent: parent, view: characterListView)
         self.hostView = hostView
         contentView.addSubview(hostView)
@@ -28,3 +27,4 @@ final class CharacterListCell: BaseCollectionViewCell<CharacterViewModel> {
         hostView = nil
     }
 }
+
