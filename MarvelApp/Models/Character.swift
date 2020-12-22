@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import BaseUI
 
 let payloadExample = """
 {
@@ -378,12 +379,8 @@ struct CharacterDataContainer: Decodable {
 }
 
 extension CharacterDataContainer: DiffableSection {
-
+    
     var viewModels: [CharacterViewModel] {
         results?.map { CharacterViewModel(model: $0) } ?? []
     }
-}
-
-struct CharactersResponseContent: DiffableContent {
-    var sections: [CharacterDataContainer]
 }

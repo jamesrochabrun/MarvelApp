@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B3DC1CF2591760800D025FF /* BaseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7B3DC1CE2591760800D025FF /* BaseUI */; };
 		7B68AB1E257DF60A00F559EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68AB1D257DF60A00F559EE /* AppDelegate.swift */; };
 		7B68AB20257DF60A00F559EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68AB1F257DF60A00F559EE /* SceneDelegate.swift */; };
 		7B68AB22257DF60A00F559EE /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68AB21257DF60A00F559EE /* CharactersListViewController.swift */; };
@@ -29,12 +30,6 @@
 		7B68AB98257F3E0D00F559EE /* CarachterArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68AB97257F3E0D00F559EE /* CarachterArtworkView.swift */; };
 		7B68ABA1257F43E700F559EE /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7B68ABA0257F43E700F559EE /* SDWebImageSwiftUI */; };
 		7B68ABA92580916B00F559EE /* CharacterFullDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABA82580916B00F559EE /* CharacterFullDetailListView.swift */; };
-		7B68ABAF2580941800F559EE /* GenericContainerDiffableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABAE2580941800F559EE /* GenericContainerDiffableCollectionView.swift */; };
-		7B68ABB72580943500F559EE /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABB62580943500F559EE /* BaseCollectionViewCell.swift */; };
-		7B68ABBC2580945300F559EE /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABBB2580945300F559EE /* BaseXibView.swift */; };
-		7B68ABC12580949E00F559EE /* CollectionReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABC02580949E00F559EE /* CollectionReusable.swift */; };
-		7B68ABD12580954C00F559EE /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABD02580954C00F559EE /* AutoLayout.swift */; };
-		7B68ABD62580959A00F559EE /* GenericContainerDiffableCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B68ABD52580959A00F559EE /* GenericContainerDiffableCollectionView.xib */; };
 		7B68ABDB2580970400F559EE /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABDA2580970400F559EE /* String+Utils.swift */; };
 		7B68ABE725809D8D00F559EE /* CharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABE625809D8D00F559EE /* CharacterListCell.swift */; };
 		7B68ABEF2582EA8300F559EE /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68ABEE2582EA8300F559EE /* HostViewController.swift */; };
@@ -86,12 +81,6 @@
 		7B68AB8F257F37F500F559EE /* HostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostView.swift; sourceTree = "<group>"; };
 		7B68AB97257F3E0D00F559EE /* CarachterArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarachterArtworkView.swift; sourceTree = "<group>"; };
 		7B68ABA82580916B00F559EE /* CharacterFullDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFullDetailListView.swift; sourceTree = "<group>"; };
-		7B68ABAE2580941800F559EE /* GenericContainerDiffableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericContainerDiffableCollectionView.swift; sourceTree = "<group>"; };
-		7B68ABB62580943500F559EE /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		7B68ABBB2580945300F559EE /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
-		7B68ABC02580949E00F559EE /* CollectionReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusable.swift; sourceTree = "<group>"; };
-		7B68ABD02580954C00F559EE /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
-		7B68ABD52580959A00F559EE /* GenericContainerDiffableCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericContainerDiffableCollectionView.xib; sourceTree = "<group>"; };
 		7B68ABDA2580970400F559EE /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		7B68ABE625809D8D00F559EE /* CharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCell.swift; sourceTree = "<group>"; };
 		7B68ABEE2582EA8300F559EE /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B68ABA1257F43E700F559EE /* SDWebImageSwiftUI in Frameworks */,
+				7B3DC1CF2591760800D025FF /* BaseUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,12 +218,6 @@
 		7B68ABAD2580940D00F559EE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				7B68ABAE2580941800F559EE /* GenericContainerDiffableCollectionView.swift */,
-				7B68ABD02580954C00F559EE /* AutoLayout.swift */,
-				7B68ABB62580943500F559EE /* BaseCollectionViewCell.swift */,
-				7B68ABBB2580945300F559EE /* BaseXibView.swift */,
-				7B68ABC02580949E00F559EE /* CollectionReusable.swift */,
-				7B68ABD52580959A00F559EE /* GenericContainerDiffableCollectionView.xib */,
 				7B68ABDA2580970400F559EE /* String+Utils.swift */,
 			);
 			path = Utils;
@@ -265,6 +249,7 @@
 			name = MarvelApp;
 			packageProductDependencies = (
 				7B68ABA0257F43E700F559EE /* SDWebImageSwiftUI */,
+				7B3DC1CE2591760800D025FF /* BaseUI */,
 			);
 			productName = MarvelApp;
 			productReference = 7B68AB1A257DF60A00F559EE /* MarvelApp.app */;
@@ -339,6 +324,7 @@
 			mainGroup = 7B68AB11257DF60A00F559EE;
 			packageReferences = (
 				7B68AB9F257F43E700F559EE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				7B3DC1CD2591760800D025FF /* XCRemoteSwiftPackageReference "BaseUI" */,
 			);
 			productRefGroup = 7B68AB1B257DF60A00F559EE /* Products */;
 			projectDirPath = "";
@@ -359,7 +345,6 @@
 				7B68AB2A257DF60B00F559EE /* LaunchScreen.storyboard in Resources */,
 				7B68AB27257DF60B00F559EE /* Assets.xcassets in Resources */,
 				7B68AB25257DF60A00F559EE /* Main.storyboard in Resources */,
-				7B68ABD62580959A00F559EE /* GenericContainerDiffableCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,12 +371,9 @@
 			files = (
 				7B68ABDB2580970400F559EE /* String+Utils.swift in Sources */,
 				7B68AB22257DF60A00F559EE /* CharactersListViewController.swift in Sources */,
-				7B68ABAF2580941800F559EE /* GenericContainerDiffableCollectionView.swift in Sources */,
 				7B68AB5B257DF74700F559EE /* CombineAPI.swift in Sources */,
 				7B68AB6A257ED3D400F559EE /* Endpoint.swift in Sources */,
-				7B68ABBC2580945300F559EE /* BaseXibView.swift in Sources */,
 				7B68AB85257F355600F559EE /* ArtworkViewModel.swift in Sources */,
-				7B68ABC12580949E00F559EE /* CollectionReusable.swift in Sources */,
 				7B68ABEF2582EA8300F559EE /* HostViewController.swift in Sources */,
 				7B68AB77257EDB7C00F559EE /* MarvelProvider.swift in Sources */,
 				7B68AB6F257ED40100F559EE /* MarvelFeed.swift in Sources */,
@@ -400,9 +382,7 @@
 				7B68AB1E257DF60A00F559EE /* AppDelegate.swift in Sources */,
 				7B68AB8A257F357300F559EE /* Artwork.swift in Sources */,
 				7B68AB7D257F327200F559EE /* CharacterViewModel.swift in Sources */,
-				7B68ABB72580943500F559EE /* BaseCollectionViewCell.swift in Sources */,
 				7B68ABA92580916B00F559EE /* CharacterFullDetailListView.swift in Sources */,
-				7B68ABD12580954C00F559EE /* AutoLayout.swift in Sources */,
 				7B68AB20257DF60A00F559EE /* SceneDelegate.swift in Sources */,
 				7B68AB53257DF65C00F559EE /* Character.swift in Sources */,
 				7B68AB65257EA5E500F559EE /* MarvelAPI.swift in Sources */,
@@ -745,6 +725,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7B3DC1CD2591760800D025FF /* XCRemoteSwiftPackageReference "BaseUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jamesrochabrun/BaseUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		7B68AB9F257F43E700F559EE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -756,6 +744,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7B3DC1CE2591760800D025FF /* BaseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B3DC1CD2591760800D025FF /* XCRemoteSwiftPackageReference "BaseUI" */;
+			productName = BaseUI;
+		};
 		7B68ABA0257F43E700F559EE /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B68AB9F257F43E700F559EE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

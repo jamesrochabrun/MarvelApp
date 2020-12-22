@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "BaseUI",
+        "repositoryURL": "https://github.com/jamesrochabrun/BaseUI.git",
+        "state": {
+          "branch": null,
+          "revision": "366ebb1437e78f5c97d9314b9c8059cb0d10a6c9",
+          "version": "1.0.7"
+        }
+      },
+      {
         "package": "SDWebImage",
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {

@@ -7,7 +7,7 @@
 
 import UIKit
 import Combine
-
+import BaseUI
 /**
  UIKit implementation
  */
@@ -17,7 +17,7 @@ final class CharactersListViewController: UIViewController {
     private let provider = MarvelProvider()
     private var cancellables: Set<AnyCancellable> = []
 
-    private typealias CharactersList = GenericContainerDiffableCollectionView<CharactersResponseContent, CharacterDataContainer, CharacterListCell>
+    private typealias CharactersList = DiffableCollectionView<CharacterDataContainer, CharacterListCell>
     
     private lazy var characterList: CharactersList = {
         var config = UICollectionLayoutListConfiguration(appearance:

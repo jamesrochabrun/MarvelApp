@@ -7,6 +7,8 @@
 
 import UIKit
 import SwiftUI
+import BaseUI
+
 
 final class CharacterListCell: BaseCollectionViewCell<CharacterViewModel> {
     
