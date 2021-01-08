@@ -17,7 +17,7 @@ struct CharacterViewModel: Identifiable {
     
     init(model: Character) {
         name = model.name ?? "no name provided"
-        description = model.description ?? "no despcription provided"
+        description = model.characterDescription 
         artwork = ArtworkViewModel(artWork: model.thumbnail)
     }
 }

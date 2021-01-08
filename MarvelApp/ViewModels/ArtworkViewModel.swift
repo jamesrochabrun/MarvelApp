@@ -15,11 +15,11 @@ struct ArtworkViewModel {
     init?(artWork: Artwork?) {
         guard
             let artWork = artWork,
-            let path = artWork.path,
-            let extensionType = artWork.extension
+            let path = artWork.path
+          //  let extensionType = artWork.imageExtension
         else { return nil }
         self.path = path
-        self.extensionType = extensionType
+        self.extensionType = artWork.imageExtension
     }
     
     func imagePathFor(variant: ImageVariant) -> String {

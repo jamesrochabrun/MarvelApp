@@ -23,7 +23,7 @@ extension CombineAPI {
         return session.dataTaskPublisher(for: request)
             .tryMap {
                 guard let response = $0.response as? HTTPURLResponse, response.statusCode == 200 else {
-                    throw APIError.responseUnsuccessful
+                    throw APIError.invalidData
                 }
                 return $0.data
             }

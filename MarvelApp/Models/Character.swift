@@ -346,11 +346,31 @@ struct Character: Decodable {
     
     let id: Int?
     let name: String?
-    let description: String?
+    let characterDescription: String
     let modified: String?
     let resourceURI: String?
     let urls: [URLKind]?
     let thumbnail: Artwork?
+    
+    let comicsInfo: Comics
+    let seriesInfo: Series
+    var comics: [Comic] = []
+    var series: [Serie] = []
+
+    var comicsCollectionUrl: URL {
+        return comicsInfo.collectionURI
+    }
+
+    var seriesCollectionUrl: URL {
+        return seriesInfo.collectionURI
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case name, thumbnail, id, modified, resourceURI, urls
+        case characterDescription = "description"
+        case comicsInfo = "comics"
+        case seriesInfo = "series"
+    }
 }
 
 extension Character: Hashable {

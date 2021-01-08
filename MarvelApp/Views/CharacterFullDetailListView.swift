@@ -38,8 +38,8 @@ struct CharacterFullDetailListView: View {
     }
 }
 
-struct CharacterHorizontalView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterFullDetailListView(characterViewModel: CharacterViewModel(model: Character(id: nil, name: nil, description: nil, modified: nil, resourceURI: nil, urls: nil, thumbnail: nil)), imagesVariant: .portraitSmall)
-    }
-}
+//struct CharacterHorizontalView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CharacterFullDetailListView(characterViewModel: CharacterViewModel(model: Character(id: nil, name: nil, description: nil, modified: nil, resourceURI: nil, urls: nil, thumbnail: nil)), imagesVariant: .portraitSmall)
+//    }
+//}

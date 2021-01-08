@@ -27,7 +27,7 @@ extension Endpoint {
     
     var request: URLRequest {
        // let url = urlComponents.url! //want to crash if no information is complete
-        let url = URL(string: "http://gateway.marvel.com/v1/public/comics?ts=415CED7F-6AC3-411D-85A9-3712AEB06268&apikey=27d25dbafd3ff80a9d448a19c11ace4d&hash=d582e82cb0e6bc701d38366a0481621e")
+        let url = URL(string: "http://gateway.marvel.com/v1/public/characters?ts=415CED7F-6AC3-411D-85A9-3712AEB06268&apikey=27d25dbafd3ff80a9d448a19c11ace4d&hash=d582e82cb0e6bc701d38366a0481621e")
         return URLRequest(url: url!)
     }
 }

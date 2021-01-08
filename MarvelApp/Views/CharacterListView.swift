@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct CharacterListView: View {
     
@@ -35,8 +36,22 @@ struct CharacterListView: View {
     }
 }
 
-struct CharacterListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterListView(characterViewModel: CharacterViewModel(model: Character(id: nil, name: nil, description: nil, modified: nil, resourceURI: nil, urls: nil, thumbnail: nil)), imagesVariant: .portraitSmall)
+//struct CharacterListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CharacterListView(characterViewModel: CharacterViewModel(model: Character(name: nil, characterDescription: nil, modified: nil, resourceURI: nil, urls: nil, thumbnail: nil)), imagesVariant: .portraitSmall)
+//
+//        Preview(viewController: CharactersListViewController())
+//                   .environment(\.colorScheme, .light)
+//                   .edgesIgnoringSafeArea(.all)
+//    }
+//}
+
+public struct Preview<ViewControllerType: UIViewController>: UIViewControllerRepresentable {
+    
+    let viewController: ViewControllerType
+    public func makeUIViewController(context: Context) -> ViewControllerType {
+        viewController
+    }
+    public func updateUIViewController(_ viewController: ViewControllerType, context: Context) {
     }
 }

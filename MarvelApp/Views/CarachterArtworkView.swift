@@ -36,6 +36,6 @@ struct CarachterArtworkView: View {
 
 struct CarachterArtworkView_Previews: PreviewProvider {
     static var previews: some View {
-        CarachterArtworkView(artworkViewModel: ArtworkViewModel(artWork: Artwork(path: "some", extension: "somen"))!, variant: .detail)
+        CarachterArtworkView(artworkViewModel: ArtworkViewModel(artWork: Artwork(path: "some", imageExtension: "somen"))!, variant: .detail)
     }
 }
