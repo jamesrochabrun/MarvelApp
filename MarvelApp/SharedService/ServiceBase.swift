@@ -122,13 +122,13 @@ class MarvelService: GenericAPI {
                     + ServiceParameters.offset + "=" + "\(offset)")
     }
     
-    func fetch<T: DataProtocol>(_ data: T.Type, completion: @escaping (Result<[T.R.T], APIError>) -> Void) {
+    func fetch<Data: DataProtocol>(_ data: Data.Type, completion: @escaping (Result<[Data.DataResource.Model], APIError>) -> Void) {
         
-        guard let marvelResource = MarvelResources(T: data.R) else { fatalError("hey whats goin gon") }
+        guard let marvelResource = MarvelResources(T: data.DataResource) else { fatalError("hey whats goin gon") }
         guard let url = url(withPath: marvelResource.rawValue) else { fatalError("no url") }
         let request = URLRequest(url: url)
         fetch(with: request) {
-            $0 as? T
+            $0 as? Data
         } completion: {
             switch $0 {
             case .success(let data):
@@ -137,35 +137,34 @@ class MarvelService: GenericAPI {
                 completion(.failure(error))
             }
         }
-
     }
 }
 
 protocol DataProtocol: Decodable {
-    associatedtype R: Resource
-    var data: R { get }
+    associatedtype DataResource: Resource
+    var data: DataResource { get }
 }
 
 protocol Resource: Decodable {
-    associatedtype T
+    associatedtype Model
     var offset: Int { get }
     var limit: Int { get }
     var count: Int { get }
     var total: Int { get }
-    var results: [T] { get }
+    var results: [Model] { get }
 }
 
-struct MarvelData<R: Resource>: DataProtocol {
-    let data: R
+struct MarvelData<DataResource: Resource>: DataProtocol {
+    let data: DataResource
 }
 
-struct Resources<T: Decodable>: Resource {
+struct Resources<Model: Decodable>: Resource {
     
     let offset: Int
     let limit: Int
     let count: Int
     let total: Int
-    var results: [T]
+    var results: [Model]
 }
 
 enum MarvelResources: String {

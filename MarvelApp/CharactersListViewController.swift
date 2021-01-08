@@ -14,7 +14,9 @@ import BaseUI
 
 final class CharactersListViewController: UIViewController {
 
-    private let provider = MarvelProvider()
+//    private let provider = MarvelProvider()
+    private let provider = Provider()
+
     private var cancellables: Set<AnyCancellable> = []
 
     private typealias CharactersList = DiffableCollectionView<CharacterDataContainer, CharacterListCell>
@@ -33,14 +35,25 @@ final class CharactersListViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(characterList)
         characterList.fillSuperview()
-        bindViewModel()
+        
+        provider.fetchComics()
+        
+        provider.$characters.sink { [unowned self] series in
+            
+            for serie in series {
+                print("the serie is \(serie.name)")
+            }
+//            characterList.applySnapshotWith([dataContainer])
+        }.store(in: &cancellables)
+        
+        
     }
     
-    /// UIKit w
-    private func bindViewModel() {
-        provider.$characterDataWrapper.sink { [unowned self] characterResult in
-            guard let dataContainer = characterResult?.data else { return }
-            characterList.applySnapshotWith([dataContainer])
-        }.store(in: &cancellables)
-    }
+//    /// UIKit w
+//    private func bindViewModel() {
+//        provider.$characterDataWrapper.sink { [unowned self] characterResult in
+//            guard let dataContainer = characterResult?.data else { return }
+//            characterList.applySnapshotWith([dataContainer])
+//        }.store(in: &cancellables)
+//    }
 }
